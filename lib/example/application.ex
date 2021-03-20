@@ -8,7 +8,8 @@ defmodule Example.Application do
       [
         supervisor(Example.Database, []),
         supervisor(ExampleWeb.Endpoint, [])
-      ] ++ libcluster()
+      ]
+      # ] ++ libcluster()
 
     opts = [strategy: :one_for_one, name: Example.Supervisor]
     Supervisor.start_link(children, opts)
